@@ -39,7 +39,7 @@ def main():
             for shot in shots:
                 if shot.check_collision(asteroid):
                     pygame.sprite.Sprite.kill(shot)
-                    pygame.sprite.Sprite.kill(asteroid)
+                    asteroid.split()
             if asteroid.check_collision(player):
                 exit("Game over!")
         for thing in drawable:
