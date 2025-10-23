@@ -36,6 +36,10 @@ def main():
         screen.fill((0,0,0))
         updatable.update(dt)
         for asteroid in asteroids:
+            for shot in shots:
+                if shot.check_collision(asteroid):
+                    pygame.sprite.Sprite.kill(shot)
+                    pygame.sprite.Sprite.kill(asteroid)
             if asteroid.check_collision(player):
                 exit("Game over!")
         for thing in drawable:
